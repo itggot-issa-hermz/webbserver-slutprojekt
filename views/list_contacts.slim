@@ -1,0 +1,10 @@
+a.create-contact href="/contacts/create":button Create contact
+.contacts
+    - contacts.each do |contact|
+        .contact-card
+            p = contact["contact_name"]
+            p = contact["contact_number"]
+            .contact-controls
+                form action="/contacts/#{contact["id"]}/delete" method="POST"
+                    input.button type="submit" value="Delete"
+                a.button href="/contacts/#{contact["id"]}/edit": button Edit

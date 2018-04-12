@@ -1,0 +1,106 @@
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    width:100vw;
+}
+.wrapper{
+    display:grid;
+
+    grid-template-areas: 
+        "header"
+        "main";
+}
+header{
+    grid-area: header;
+    background-color:lightgreen;
+    height:13vh;
+    display:grid;
+    justify-content: right;
+    align-items:center;
+    padding-right:50px;
+}
+main{
+    grid-area: main;
+    display:grid;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-form{
+    display:grid;
+    width:400px;
+    height:200px;
+    box-shadow: 0px 3px 12px 0px rgba(199,199,199,1);
+    margin-top:50px;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.login-form > input:first-of-type{
+    margin-top:25px;
+}
+.login-form input{
+    grid-column: 2/12;
+    height:20px;
+}
+.login-form div{
+    grid-column: 2/12;
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1;
+    align-items:center;
+}
+
+.login-form div a{
+    grid-column: 2/4;
+    grid-row: 1;
+}
+.login-form div input{
+    grid-column: 10/12;
+    grid-row: 1;
+}
+
+
+.create-contact{
+    margin:25px;
+    cursor: pointer;
+    text-align:center;
+    border-radius:5px;
+    width:100px;
+}
+
+.contact-card{
+    height:80px;
+    widows: 300px;
+    border-radius:4px;
+    box-shadow: 0px 3px 12px 0px rgba(199,199,199,1);
+    background: lightgreen;
+    display:grid;
+    grid-template-rows: repeat(9, 1fr);
+    padding:5px;
+    margin-bottom:20px;
+}
+.contact-controls{
+    display:grid;
+    grid-template-columns: repeat(9, 1fr);
+    align-items: center;
+    padding-top:5px;
+}
+.contact-card p{
+    margin:0;
+    background-color:white;
+    grid-row: span 8;
+    padding:15px;
+}
+
+.contact-card a{
+    grid-column: 1;
+    grid-row:1;
+}
+.contact-card form{
+    grid-row:1;
+    grid-column: 9;
+}
+
+
+
