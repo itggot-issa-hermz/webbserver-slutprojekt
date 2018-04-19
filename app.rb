@@ -147,12 +147,13 @@ class App < Sinatra::Base
 			if session[:user_id]
 				contact_id = params[:id]
 				new_contact = params["contact_name"]
+				new_contact2 = params["contact_number"]
 	
 				db = SQLite3::Database.new('db/data.sqlite')
 				db.results_as_hash = true
 				result = db.execute("SELECT user_id FROM contacts WHERE id=?",[contact_id])
 				if result.first["user_id"] == session[:user_id]
-					db.execute("UPDATE contacts SET contact_name=? WHERE id=?",[new_contact, contact_id])
+					db.execute("UPDATE contacts SET contact_name=?, contact_number=? WHERE id=?",[new_contact, new_contact2, contact_id])
 					redirect('/contacts')
 				end
 			else
